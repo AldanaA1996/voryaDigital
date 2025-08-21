@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="absolute bottom-0 -right-1/4 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="container mx-auto max-w-4xl px-4 text-center relative z-10">
-            <h1 className="text-4xl md:text-6xl font-extrabold font-headline tracking-tight text-foreground mb-4">
+            <h1 className="text-4xl md:text-6xl font-extrabold font-title tracking-tight text-foreground mb-4">
                 Crafting Digital Experiences
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
