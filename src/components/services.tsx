@@ -5,18 +5,18 @@ import { Camera, Code, PenSquare } from 'lucide-react';
 const services = [
   {
     icon: <Camera className="h-10 w-10 text-primary" />,
-    title: 'Photography',
-    description: 'From portraits to products, I capture stunning visuals that tell your story and engage your audience.',
+    title: 'Fotografía',
+    description: 'Desde retratos hasta fotografía de producto, capturo los mejores visuales para contar tu historia y que puedas contectar con tu audiencia.',
   },
   {
     icon: <Code className="h-10 w-10 text-primary" />,
     title: 'Web Development',
-    description: 'Building fast, responsive, and beautiful websites that provide a seamless user experience.',
+    description: 'Sitios web rápidos, intuitivos y atractivos que ofrezcan una experiencia de usuario fluida',
   },
   {
     icon: <PenSquare className="h-10 w-10 text-primary" />,
-    title: 'Content Creation',
-    description: 'Crafting compelling narratives and content strategies that build brands and connect with people.',
+    title: 'Creación de Contenido',
+    description: 'Contenido creativo y de calidad que impulsa tu negocio en el mundo digital',
   },
 ];
 
@@ -25,9 +25,9 @@ export default function Services() {
     <section id="services" className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold md:text-4xl font-headline">My Services</h2>
+          <h2 className="text-3xl font-bold md:text-4xl font-title">My Services</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Leveraging a diverse skill set to deliver exceptional results across multiple creative fields.
+           Aprovecho una amplia gama de habilidades para ofrecer resultados excepcionales en distintos campos creativos.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-background border-t border-border/50">
       <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between">
         <p className="text-sm text-muted-foreground mb-4 sm:mb-0">
-          © {new Date().getFullYear()} Nexus Portfolio. All rights reserved.
+          © {new Date().getFullYear()} CommitPath. All rights reserved.
         </p>
         <div className="flex items-center space-x-2">
           <Button variant="ghost" size="icon" asChild>

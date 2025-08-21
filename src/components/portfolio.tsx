@@ -59,7 +59,7 @@ export default function Portfolio() {
     <section id="portfolio" className="w-full py-16 md:py-24 bg-secondary/50">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold md:text-4xl font-headline">Unified Portfolio</h2>
+          <h2 className="text-3xl font-bold md:text-4xl font-title">Unified Portfolio</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
             A showcase of my work in web development, photography, and content creation.
           </p>
