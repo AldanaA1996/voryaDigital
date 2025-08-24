@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useTransition } from 'react';
@@ -14,12 +13,12 @@ import type { SuggestPortfolioArrangementOutput } from '@/ai/flows/suggest-portf
 import { cn } from '@/lib/utils';
 
 const projects = [
-    { id: 'web-proj-1', title: 'Corporate Landing Page', description: 'A modern and sleek landing page for a corporate client.', category: 'Web Development', image: 'https://placehold.co/600x400.png', dataAiHint: 'corporate website' },
-    { id: 'photo-proj-1', title: 'Urban Exploration', description: 'Capturing the soul of the city streets.', category: 'Photography', image: 'https://placehold.co/600x400.png', dataAiHint: 'city photography' },
-    { id: 'web-proj-2', title: 'E-commerce Store', description: 'A fully functional e-commerce platform with a custom CMS.', category: 'Web Development', image: 'https://placehold.co/600x400.png', dataAiHint: 'online store' },
-    { id: 'photo-proj-2', title: 'Wedding Photography', description: 'Documenting beautiful moments from a special day.', category: 'Photography', image: 'https://placehold.co/600x400.png', dataAiHint: 'wedding event' },
-    { id: 'web-proj-3', title: 'Portfolio Website', description: 'A personal portfolio for a graphic designer.', category: 'Web Development', image: 'https://placehold.co/600x400.png', dataAiHint: 'artist portfolio' },
-    { id: 'photo-proj-3', title: 'Product Shots', description: 'Clean and professional product photography for an online brand.', category: 'Photography', image: 'https://placehold.co/600x400.png', dataAiHint: 'product commercial' },
+    { id: 'web-proj-1', title: 'Landing Page', description: 'Una landing page moderna y elegante.', category: 'Desarrollo Web', image: 'https://placehold.co/600x400.png', dataAiHint: 'corporate website' },
+    { id: 'photo-proj-1', title: 'Exploración Urbana', description: 'Capturando el alma de las calles de la ciudad.', category: 'Fotografía', image: 'https://placehold.co/600x400.png', dataAiHint: 'city photography' },
+    { id: 'web-proj-2', title: 'Tienda de Comercio Electrónico', description: 'Una plataforma de comercio electrónico completamente funcional con un CMS personalizado.', category: 'Desarrollo Web', image: 'https://placehold.co/600x400.png', dataAiHint: 'online store' },
+    { id: 'photo-proj-2', title: 'Fotografía de Bodas', description: 'Documentando momentos hermosos de un día especial.', category: 'Fotografía', image: 'https://placehold.co/600x400.png', dataAiHint: 'wedding event' },
+    { id: 'web-proj-3', title: 'Sitio Web de Portafolio', description: 'Un portafolio personal para un diseñador gráfico.', category: 'Desarrollo Web', image: 'https://placehold.co/600x400.png', dataAiHint: 'artist portfolio' },
+    { id: 'photo-proj-3', title: 'Fotografías de Producto', description: 'Fotografía de productos limpia y profesional para una marca en línea.', category: 'Fotografía', image: 'https://placehold.co/600x400.png', dataAiHint: 'product commercial' },
 ];
 
 const skills = [
@@ -47,7 +46,7 @@ export default function Portfolio() {
       if (result.success && result.data) {
         setSuggestion(result.data);
       } else {
-        setError(result.error || 'An unknown error occurred.');
+        setError(result.error || 'Ocurrió un error desconocido.');
       }
     });
   };
@@ -59,9 +58,9 @@ export default function Portfolio() {
     <section id="portfolio" className="w-full py-16 md:py-24 bg-secondary/50">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold md:text-4xl font-title">Unified Portfolio</h2>
+          <h2 className="text-3xl font-bold md:text-4xl font-title">Portafolio Unificado</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            A showcase of my work in web development, photography, and content creation.
+            Una muestra de mi trabajo en desarrollo web, fotografía y creación de contenido.
           </p>
         </div>
 
@@ -69,23 +68,23 @@ export default function Portfolio() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Lightbulb className="text-accent" />
-              Portfolio Personalization
+              Personalización de Portafolio
             </CardTitle>
             <CardDescription>
-              Tell me what you're interested in, and I'll tailor my portfolio for you using AI.
+              Dime en qué estás interesado y personalizaré mi portafolio para ti usando IA.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col sm:flex-row gap-2">
               <Input 
-                placeholder="e.g., 'a modern website for my new cafe' or 'wedding photos'"
+                placeholder="ej., 'un sitio web moderno para mi nuevo café' o 'fotos de boda'"
                 value={interests}
                 onChange={(e) => setInterests(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handlePersonalize()}
                 disabled={isPending}
               />
               <Button onClick={handlePersonalize} disabled={isPending} className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Personalize ✨'}
+                {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Personalizar ✨'}
               </Button>
             </div>
           </CardContent>
@@ -96,7 +95,7 @@ export default function Portfolio() {
         {suggestion && (
           <Alert className="mb-8 border-accent">
             <Lightbulb className="h-4 w-4 text-accent" />
-            <AlertTitle className="text-accent">AI-Powered Suggestion</AlertTitle>
+            <AlertTitle className="text-accent">Sugerencia Impulsada por IA</AlertTitle>
             <AlertDescription>
               {suggestion.reasoning}
             </AlertDescription>
@@ -105,7 +104,7 @@ export default function Portfolio() {
 
         {suggestion && suggestion.suggestedSkills.length > 0 && (
             <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-center font-headline">Suggested Skills</h3>
+                <h3 className="text-xl font-semibold mb-4 text-center font-headline">Habilidades Sugeridas</h3>
                 <div className="flex flex-wrap gap-2 justify-center">
                     {skills.map(skill => {
                          const isSuggested = suggestedSkillIds.has(skill.id);
