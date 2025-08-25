@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative w-full py-24 md:py-32 lg:py-40 bg-background overflow-hidden">
+    <section id="hero" className="relative w-full py-28 md:py-32 lg:py-40 bg-background overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute top-0 -left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
         <div className="absolute bottom-0 -right-1/4 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
