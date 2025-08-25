@@ -10,19 +10,19 @@ export default function Hero() {
         <div className="absolute top-0 -left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
         <div className="absolute bottom-0 -right-1/4 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
-        <div className="container mx-auto max-w-4xl px-4 text-center relative z-10">
-            <h1 className="text-4xl md:text-6xl font-extrabold font-title tracking-tight text-foreground mb-4">
-                Crafting Digital Experiences
+        <div className="container mx-auto max-w-7xl  text-center relative z-10">
+            <h1 className="text-3xl md:text-6xl font-extrabold font-title tracking-tight text-foreground mb-4">
+                Diseñando Experiencias Digitales
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-                A passionate <span className="text-primary font-semibold">Photographer</span>, <span className="text-primary font-semibold">Web Developer</span>, and <span className="text-primary font-semibold">Content Creator</span> bringing ideas to life.
+                <span className="text-primary font-semibold">Fotografía</span>, <span className="text-accent font-semibold">Desarrollo web</span> y <span className="text-primary font-semibold">Creación de contenido</span>. Tres pasiones que se complementan para ofrecerte un servicio integral.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
-                    <Link href="#portfolio">View My Work</Link>
+                    <Link href="#portfolio">Mi trabajo</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild className="transition-transform hover:scale-105">
-                    <Link href="#contact">Get In Touch</Link>
+                    <Link href="#contact">Contactame</Link>
                 </Button>
             </div>
         </div>
