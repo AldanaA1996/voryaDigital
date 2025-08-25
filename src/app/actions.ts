@@ -5,6 +5,8 @@ import { z } from 'zod';
 import { suggestPortfolioArrangement } from '@/ai/flows/suggest-portfolio-arrangement';
 import type { SuggestPortfolioArrangementOutput } from '@/ai/flows/suggest-portfolio-arrangement';
 
+import nodemailer from 'nodemailer';
+
 // --- Contact Form Action ---
 
 const contactFormSchema = z.object({
@@ -13,29 +15,7 @@ const contactFormSchema = z.object({
   message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
-export async function submitContactForm(prevState: any, formData: FormData) {
-  const validatedFields = contactFormSchema.safeParse({
-    name: formData.get('name'),
-    email: formData.get('email'),
-    message: formData.get('message'),
-  });
 
-  if (!validatedFields.success) {
-    return {
-      errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Please correct the errors and try again.',
-      success: false,
-    };
-  }
-  
-  // In a real app, you would send an email or save to a database here.
-  console.log('Contact form submitted:', validatedFields.data);
-
-  return {
-    message: "Thank you for your message! I'll get back to you soon.",
-    success: true,
-  };
-}
 
 
 // --- Portfolio Personalization Action ---
@@ -84,3 +64,37 @@ export async function getSuggestedArrangement(visitorInterests: string): Promise
     return { success: false, error: 'Sorry, I couldn\'t generate a suggestion at this time.' };
   }
 }
+
+export async function submitContactForm(prevState: any, formData: FormData) {
+  try {
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+
+    const trasporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+    await trasporter.sendMail({
+      from: `"${name}" <${email}>`,
+      to: process.env.EMAIL_TO,
+      subject: 'New Contact Form Submission',
+      text: message,
+      html: `<p>${message}</p><p>From: ${name} (${email})</p>`,
+    });
+
+    return {
+      message: "Thank you for your message! I'll get back to you soon.",
+      success: true,
+    };
+  } catch (error) {
+    console.error('Error sending contact form email:', error);
+    return {
+      message: 'There was an error sending your message. Please try again later.',
+      success: false,
+    };
+  }
+  }

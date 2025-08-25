@@ -10,18 +10,14 @@ export default function Footer() {
           © {new Date().getFullYear()} CommitPath. All rights reserved.
         </p>
         <div className="flex items-center space-x-2">
+          
           <Button variant="ghost" size="icon" asChild>
-            <a href="#" aria-label="Twitter">
-              <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a href="#" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/aldana-albani-7409b4336/" aria-label="LinkedIn">
               <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/voryadigi/" aria-label="Instagram">
               <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
             </a>
           </Button>

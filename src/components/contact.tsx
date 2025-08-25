@@ -26,9 +26,9 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground">
+    <Button type="submit" disabled={pending} className="w-full sm:w-auto bg-accent hover:bg-primary/90 text-primary-foreground">
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      Send Message
+      Enviar
     </Button>
   );
 }
@@ -64,22 +64,22 @@ export default function Contact() {
       <div className="container mx-auto max-w-4xl px-4">
         <Card className="border-2 border-primary/20 shadow-lg">
           <CardHeader className="text-center">
-            <CardTitle className="text-3xl font-bold md:text-4xl font-headline">Get In Touch</CardTitle>
+            <CardTitle className="text-3xl font-bold md:text-4xl font-headline">Escribime</CardTitle>
             <CardDescription className="text-muted-foreground pt-2">
-              Have a project in mind or just want to say hi? I'd love to hear from you.
+              Tenés un proyecto en mente o solo queres saludar? Me encantaria oir de ti.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form action={formAction} className="space-y-6">
+              <form name='contacto' action={formAction} className="space-y-6">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>Nombre</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your Name" {...field} />
+                        <Input placeholder="Tu Nombre" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -92,7 +92,7 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="your@email.com" {...field} />
+                        <Input type="email" placeholder="tuemail@email.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -103,9 +103,9 @@ export default function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Message</FormLabel>
+                      <FormLabel>Mensaje</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Tell me about your project or inquiry..." rows={6} {...field} />
+                        <Textarea placeholder="Cuentame sobre tu proyecto o duda..." rows={6} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

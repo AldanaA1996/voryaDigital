@@ -13,12 +13,12 @@ import type { SuggestPortfolioArrangementOutput } from '@/ai/flows/suggest-portf
 import { cn } from '@/lib/utils';
 
 const projects = [
-    { id: 'web-proj-1', title: 'Landing Page', description: 'Una landing page moderna y elegante.', category: 'Desarrollo Web', image: 'https://placehold.co/600x400.png', dataAiHint: 'corporate website' },
-    { id: 'photo-proj-1', title: 'Exploración Urbana', description: 'Capturando el alma de las calles de la ciudad.', category: 'Fotografía', image: 'https://placehold.co/600x400.png', dataAiHint: 'city photography' },
-    { id: 'web-proj-2', title: 'Tienda de Comercio Electrónico', description: 'Una plataforma de comercio electrónico completamente funcional con un CMS personalizado.', category: 'Desarrollo Web', image: 'https://placehold.co/600x400.png', dataAiHint: 'online store' },
-    { id: 'photo-proj-2', title: 'Fotografía de Bodas', description: 'Documentando momentos hermosos de un día especial.', category: 'Fotografía', image: 'https://placehold.co/600x400.png', dataAiHint: 'wedding event' },
-    { id: 'web-proj-3', title: 'Sitio Web de Portafolio', description: 'Un portafolio personal para un diseñador gráfico.', category: 'Desarrollo Web', image: 'https://placehold.co/600x400.png', dataAiHint: 'artist portfolio' },
-    { id: 'photo-proj-3', title: 'Fotografías de Producto', description: 'Fotografía de productos limpia y profesional para una marca en línea.', category: 'Fotografía', image: 'https://placehold.co/600x400.png', dataAiHint: 'product commercial' },
+    { id: 'web-proj-1', title: 'Landing Page', description: 'Una landing page moderna y elegante.', category: 'Desarrollo Web', image: '/images/kauna.png', dataAiHint: 'corporate website' },
+    { id: 'photo-proj-1', title: 'Exploración Urbana', description: 'Capturando el alma de las calles de la ciudad.', category: 'Fotografía', image: '/images/sitio-24.jpg', dataAiHint: 'city photography' },
+    { id: 'web-proj-2', title: 'Diseño de Identidad de Marca', description: 'Diseño de paleta de colores, logo y carteleria para emprendimiento', category: 'Diseño', image: '/images/DISTC.png', dataAiHint: 'online store' },
+    { id: 'photo-proj-2', title: 'Fotografía de Bodas', description: 'Documentando momentos hermosos de un día especial.', category: 'Fotografía', image: '/images/bodas(9).jpg', dataAiHint: 'wedding event' },
+    { id: 'web-proj-3', title: 'Books de Fotos', description: 'Capturando imagenes perfectas para su dia mas importante.', category: 'Fotografía', image: '/images/bodas(4).jpg', dataAiHint: 'wedding photograpy' },
+    { id: 'photo-proj-3', title: 'Fotografías de Producto', description: 'Fotografía de productos limpia y profesional para una marca en línea.', category: 'Fotografía', image: '/images/servicios.jpg', dataAiHint: 'product commercial' },
 ];
 
 const skills = [
@@ -64,43 +64,8 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <Card className="mb-12 shadow-sm">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Lightbulb className="text-accent" />
-              Personalización de Portafolio
-            </CardTitle>
-            <CardDescription>
-              Dime en qué estás interesado y personalizaré mi portafolio para ti usando IA.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <Input 
-                placeholder="ej., 'un sitio web moderno para mi nuevo café' o 'fotos de boda'"
-                value={interests}
-                onChange={(e) => setInterests(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handlePersonalize()}
-                disabled={isPending}
-              />
-              <Button onClick={handlePersonalize} disabled={isPending} className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Personalizar ✨'}
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+      
 
-        {error && <Alert variant="destructive" className="mb-8"><AlertTitle>Error</AlertTitle><AlertDescription>{error}</AlertDescription></Alert>}
-
-        {suggestion && (
-          <Alert className="mb-8 border-accent">
-            <Lightbulb className="h-4 w-4 text-accent" />
-            <AlertTitle className="text-accent">Sugerencia Impulsada por IA</AlertTitle>
-            <AlertDescription>
-              {suggestion.reasoning}
-            </AlertDescription>
-          </Alert>
-        )}
 
         {suggestion && suggestion.suggestedSkills.length > 0 && (
             <div className="mb-8">

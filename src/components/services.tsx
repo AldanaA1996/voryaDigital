@@ -25,7 +25,7 @@ export default function Services() {
     <section id="services" className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold md:text-4xl font-title">My Services</h2>
+          <h2 className="text-3xl font-bold md:text-4xl font-title">Mis Servicios</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
            Aprovecho una amplia gama de habilidades para ofrecer resultados excepcionales en distintos campos creativos.
           </p>
